@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widdt=device-widdt, initial-scale=1.0">
+    <title>JS-Intro Questions</title>
+</head>
+
+<body>
+    <dl>
+        <dt>1:-What is Node.js and where does it run?</dt>
+        <dd>Node.js is a runtime environment that allows JavaScript to run outside the browser. It runs on the server
+        </dd>
+        <hr>
+        <dt>2:-Is Node.js a language, framework, or runtime?</dt>
+        <dd>Node.js is a runtime environment, not a language or framework.</dd>
+        <hr>
+        <dt>3:-What is the V8 engine?</dt>
+        <dd>V8 is Google's JavaScript engine that converts JavaScript into fast machine code.</dd>
+        <hr>
+        <dt>4:-How does Node.js handle multiple requests?</dt>
+        <dd>Node.js uses a single thread and event loop to handle many requests asynchronously.</dd>
+        <hr>
+        <dt>5:-Why is Node.js non-blocking?</dt>
+        <dd>Because it uses asynchronous operations, so it does not wait for tasks to finish.</dd>
+        <hr>
+        <dt>6:-Why Node.js is popular for APIs?</dt>
+        <dd>Node.js is fast, lightweight, and handles many API requests at once.</dd>
+        <hr>
+        <dt>7:-Why did you choose Node.js for your project?</dt>
+        <dd>I chose Node.js because it is scalable, fast, and uses JavaScript for both frontend and backend.</dd>
+        <hr>
+
+        <!-- LECTURE 02: Node Runtime & Process -->
+        <dt>8. What is nvm and why is it used?</dt>
+        <dd>nvm is a Node Version Manager used to switch between multiple Node.js versions.</dd>
+        <hr>
+
+        <dt>9. What happens when you run a JavaScript file in Node.js?</dt>
+        <dd>Node loads the file, executes it using the V8 engine, and runs it in the Node runtime.</dd>
+        <hr>
+
+        <dt>10. What is process.env and how is it used?</dt>
+        <dd>process.env stores environment variables used for configuration.</dd>
+        <hr>
+
+        <dt>11. Difference between window and global?</dt>
+        <dd>window is for browsers, global is for Node.js.</dd>
+        <hr>
+
+        <dt>12. How does Node.js execute JavaScript outside the browser?</dt>
+        <dd>Using the V8 engine and Node runtime APIs.</dd>
+        <hr>
+
+        <dt>13. Explain the Node.js runtime lifecycle.</dt>
+        <dd>Start → execute code → event loop runs → process exits.</dd>
+        <hr>
+
+        <!-- LECTURE 03: Modules & require -->
+        <dt>14. What are modules in Node.js?</dt>
+        <dd>Reusable blocks of code split into separate files.</dd>
+        <hr>
+
+        <dt>15. What is require()?</dt>
+        <dd>Used to import modules in Node.js.</dd>
+        <hr>
+
+        <dt>16. Difference between exports and module.exports?</dt>
+        <dd>module.exports is the actual exported object; exports is its reference.</dd>
+        <hr>
+
+        <dt>17. What is CommonJS?</dt>
+        <dd>A module system used by Node.js.</dd>
+        <hr>
+
+        <dt>18. What is module caching?</dt>
+        <dd>Once loaded, a module is reused instead of reloaded.</dd>
+        <hr>
+
+        <dt>19. What are circular dependencies?</dt>
+        <dd>When two modules depend on each other.</dd>
+        <hr>
+
+        <!-- LECTURE 04: npm & package.json -->
+        <dt>20. What is npm?</dt>
+        <dd>Node Package Manager used to install libraries.</dd>
+        <hr>
+
+        <dt>21. What is package.json?</dt>
+        <dd>A file that stores project metadata and dependencies.</dd>
+        <hr>
+
+        <dt>22. Difference between dependencies and devDependencies?</dt>
+        <dd>dependencies are for production, devDependencies for development.</dd>
+        <hr>
+
+        <dt>23. What is package-lock.json?</dt>
+        <dd>Locks exact versions of installed packages.</dd>
+        <hr>
+
+        <dt>24. Difference between npm install and npm ci?</dt>
+        <dd>npm ci is faster and used for clean production installs.</dd>
+        <hr>
+
+        <dt>25. What is npx?</dt>
+        <dd>Runs npm packages without installing them globally.</dd>
+        <hr>
+
+        <!-- LECTURE 05: File System (fs) -->
+        <dt>26. What is the fs module?</dt>
+        <dd>Used to work with files and directories.</dd>
+        <hr>
+
+        <dt>27. Difference between sync and async fs methods?</dt>
+        <dd>Sync blocks execution, async does not.</dd>
+        <hr>
+
+        <dt>28. Why is async fs preferred?</dt>
+        <dd>It does not block the event loop.</dd>
+        <hr>
+
+        <dt>29. How is error handling done in fs?</dt>
+        <dd>Using error-first callbacks or try-catch with promises.</dd>
+        <hr>
+
+        <dt>30. How can fs block the event loop?</dt>
+        <dd>By using synchronous fs methods.</dd>
+        <hr>
+
+        <dt>31. How to handle large file uploads in Node.js?</dt>
+        <dd>Using streams.</dd>
+        <hr>
+
+        <!-- LECTURE 06: Streams & Buffers -->
+        <dt>32. What is a Buffer?</dt>
+        <dd>A temporary memory area to store binary data.</dd>
+        <hr>
+
+        <dt>33. What are Streams?</dt>
+        <dd>Data processing in small chunks.</dd>
+        <hr>
+
+        <dt>34. Difference between Readable and Writable streams?</dt>
+        <dd>Readable reads data, Writable writes data.</dd>
+        <hr>
+
+        <dt>35. What does pipe() do?</dt>
+        <dd>Connects one stream to another.</dd>
+        <hr>
+
+        <dt>36. Difference between streams and readFile?</dt>
+        <dd>Streams use less memory than readFile.</dd>
+        <hr>
+
+        <dt>37. How are streams used in real-time applications?</dt>
+        <dd>For efficient data transfer like video or file streaming.</dd>
+        <hr>
+
+
+
+    </dl>
+</body>
+
+</html>
