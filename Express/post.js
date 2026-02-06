@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs")
 const path = require("path");
 const app = express();
 app.use(express.json());
@@ -20,13 +21,17 @@ app.get("/login",(req,res)=>{
 });
 
 app.get("/register",(req,res)=>{
-    res.sendFile(path.json(__dirname,"view/register.html"));
+    res.sendFile(path.join(__dirname,"view/register.html"));
 });
 app.post("/register",(req,res)=>{
-    let {emial ,password} = req.body;
+    let {name,email ,password} = req.body;
+    
+    let user = fs.readFileSync(path.join(__dirname,"user.json"))
+    
+    user.push({name,email ,password})     ;
+    fs.writeFileSync((path.join(__dirname,"user.json")),JSON.stringify(user,null,2))
+    res.send(`<h1>logined<h1>`);
 
-    res.send(`<h1>logined<h1>\n
-        `)
 })
 // app.post("/submit",(req,res)=>{
 app.post("/login",(req,res)=>{
@@ -45,6 +50,6 @@ let {email,password} = req.body
          `);
 });
 
-app.listen(7000,()=>{
+app.listen(7000,()=>{ 
     console.log("request gone on localhost 7000");
 });
