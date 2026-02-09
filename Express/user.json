@@ -1,1 +1,61 @@
-[]
+[
+  {
+    "name": "Het Patel",
+    "email": "het@gmail.com",
+    "password": "1234",
+    "gander": "male"
+  },
+  {
+    "name": "patel",
+    "email": "patel@giaml.com",
+    "password": "123",
+    "gander": "male"
+  },
+  {
+    "name": "patel",
+    "email": "patel@giaml.com",
+    "password": "123",
+    "gander": "male"
+  },
+  {
+    "name": "patel",
+    "email": "patel@giaml.com",
+    "password": "123",
+    "gander": "male"
+  },
+  {
+    "name": "Het Patel",
+    "email": "het.patel.010420047@gmail.com",
+    "password": "123",
+    "gander": "male"
+  },
+  {
+    "name": "Het Patel",
+    "email": "het.patel.010420047@gmail.com",
+    "password": "123",
+    "gander": "male"
+  },
+  {
+    "name": "aastha",
+    "email": "abc@gmail.com",
+    "password": ""
+  },
+  {
+    "name": "aastha",
+    "email": "abc@gmail.com",
+    "password": "3es",
+    "gander": "female"
+  },
+  {
+    "name": "aastha",
+    "email": "abc@gmail.com",
+    "password": "3es",
+    "gander": "female"
+  },
+  {
+    "name": "abc",
+    "email": "abcd@gmail.com",
+    "password": "1234",
+    "gander": "female"
+  }
+]

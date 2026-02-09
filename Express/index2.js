@@ -1,13 +1,11 @@
 const express = require("express");
+const fs = require("fs")
 const path = require("path");
-const fs = require("fs");
-const cookieParser = require("cookie-parser");
 const app = express();
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); 
 
-app.get("/het",(req ,res)=>{
+app.get("/",(req ,res)=>{
     // res.sendFile(path.join(__dirname,"view/index.html"));
     res.sendFile(path.join(__dirname,"view","index.html"));
 });
@@ -18,64 +16,40 @@ app.get("/about",(req,res)=>{
     res.sendFile(path.join(__dirname,"view","about.html"));
 });
 
-app.get("/register", (req, res) => {
-  res.send("Register Page");
+app.get("/login",(req,res)=>{
+    res.sendFile(path.join(__dirname,"view","login.html"));
 });
 
-app.post("/register", (req, res) => {
-  const { email, password } = req.body;
+app.get("/register",(req,res)=>{
+    res.sendFile(path.join(__dirname,"view/register.html"));
+});
+app.post("/register",(req,res)=>{
+    let {name,email ,password} = req.body;
+    
+    let user = fs.readFileSync(path.join(__dirname,"user.json"))
+    
+    user.push({name,email ,password})     ;
+    fs.writeFileSync((path.join(__dirname,"user.json")),JSON.stringify(user,null,2))
+    res.send(`<h1>logined<h1>`);
 
-  const users = JSON.parse(fs.readFileSync("users.json", "utf-8"));
+})
+// app.post("/submit",(req,res)=>{
+app.post("/login",(req,res)=>{
 
-  users.push({ email, password });
+// let email = req.body.email;
+// let password = req.body.password;
 
-  fs.writeFileSync("users.json", JSON.stringify(users, null, 2));
+let {email,password} = req.body
 
-  res.cookie("user", email); // store email in cookie
+// console.log(email);
+// console.log(password);
 
-  res.send("Registration successful");
+    res.send(`<h2>Hello</h2>
+        ${email} welcome to webside \n 
+        <a href = /login>Go back to login page </a>
+         `);
 });
 
-app.get("/login", (req, res) => {
-  res.send("Login Page");
-});
-
-app.post("/login", (req, res) => {
-  const { email, password } = req.body;
-
-  const users = JSON.parse(fs.readFileSync("users.json", "utf-8"));
-
-  const userFound = users.find(
-    user => user.email === email && user.password === password
-  );
-
-  if (!userFound) {
-    return res.status(401).send("Invalid credentials");
-  }
-
-  res.cookie("user", email);
-  res.send("Login successful");
-});
-
-// const authMiddleware = (req, res, next) => {
-//   const user = req.cookies.user;
-
-//   if (!user) {
-//     return res.status(403).send(" Please login to access dashboard");
-//   }
-
-//   next(); // user is logged in
-// };
-
-app.get("/dashboard", authMiddleware, (req, res) => {
-  res.send(`📊 Dashboard - Welcome ${req.cookies.user}`);
-});
-
-app.get("/logout", (req, res) => {
-  res.clearCookie("user");
-  res.send(" Logged out successfully");
-});
-
-app.listen(7777,()=>{
-    console.log("request gone on localhost 7777");
+app.listen(7000,()=>{ 
+    console.log("request gone on localhost 7000");
 });
