@@ -14,15 +14,13 @@ app.get("/",(req ,res)=>{
 });
 app.get("/home",(req,res)=>{
     res.sendFile(path.join(__dirname,"view","home.html"));
-})
+});
 app.get("/about",(req,res)=>{
     res.sendFile(path.join(__dirname,"view","about.html"));
 });
-
 app.get("/login",(req,res)=>{
     res.sendFile(path.join(__dirname,"view","login.html"));
 });
-
 app.get("/register",(req,res)=>{
     res.sendFile(path.join(__dirname,"view/register.html"));
 });
@@ -32,7 +30,6 @@ app.post("/register",(req,res)=>{
     let user = fs.readFileSync(FILE_PATH,"utf-8");
     let final = JSON.parse(user);
     final.push({name ,email,password,gander});
-
     fs.writeFileSync(FILE_PATH, JSON.stringify(final, null, 2))
     // fs.writeFileSync((path.join(__dirname,"user.json")),JSON.stringify(user,null,2))
     res.cookie(name,email);
@@ -45,7 +42,7 @@ app.post("/login",(req,res)=>{
 // let email = req.body.email;
 // let password = req.body.password;
 
-let {email,password} = req.body
+let {email,password} = req.body;
 
 // console.log(email);
 // console.log(password);
