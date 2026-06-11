@@ -7,9 +7,9 @@ const fs = require("fs")
 // fs.appendFile("test.txt","\nuiux",(error)=>{})
 // fs.appendFileSync("test.txt","\n03/06")
 
-// fs.readFile("test.txt",'utf-8',(error,data)=>{
-//     console.log(data);     
-// })
+fs.readFile("test.txt",'utf-8',(error,data)=>{
+    console.log(data);     
+})
 
 //   fs.unlink("test.txt",(error)=>{});
 

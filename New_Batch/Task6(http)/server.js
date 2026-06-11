@@ -15,7 +15,7 @@ const port = 3000 //17
 
 // t2
 // const server = http.createServer((req,res)=>{
-//     res.writeHead(200,{'Content-Type':'text/html'})
+//     res.setHeader(200,{'Content-Type':'text/html'})// 
 //     res.end("<h1>Hello welcome to my ws</h1>")
 // })
 
@@ -63,8 +63,8 @@ const port = 3000 //17
 // t11
 // const server = http.createServer((req,res)=>{
 //     const data = {
-//         "name":"het",
-//         "course":"node.js"
+//         name:"het",
+//         course:"node.js"
 //     }
 
 //     res.writeHead(200 ,{"Content-Type":"application/json"})
@@ -102,8 +102,8 @@ const port = 3000 //17
 // t14
 // const server = http.createServer((req,res)=>{
 //     const data = {
-//         "name":"het",
-//         "course":"node.js"
+//         name:"het",
+//         course:"node.js"
 //     }
 //     if (req.url === "/api/users") {
         
@@ -115,19 +115,19 @@ const port = 3000 //17
 // server.listen(port,()=>console.log('server is running on',port))
 
 // t15 ,16
-// const server = http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   
-//   if (req.url === '/success') {
-//     res.writeHead(200, { 'Content-Type': 'text/plain' });
-//     res.end('Success');
-//   } else if (req.url === '/error') {
-//     res.writeHead(500, { 'Content-Type': 'text/plain' });
-//     res.end('Internal Server Error');
-//   } else {
-//     res.writeHead(404, { 'Content-Type': 'text/plain' });
-//     res.end('Page Not Found');
-//   }
-// });
+  if (req.url === '/success') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Success');
+  } else if (req.url === '/error') {
+    res.writeHead(500, { 'Content-Type': 'text/plain' });
+    res.end('Internal Server Error');
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Page Not Found');
+  }
+});
 
 // server.listen(port, () => {
 //   console.log('Server running at',port);
