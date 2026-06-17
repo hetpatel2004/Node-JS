@@ -131,4 +131,4 @@ const port = 7777
 // app.listen(port, console.log("server is running...."))
 
 // t13
-
+// app.use((req,res,next)=>{})
