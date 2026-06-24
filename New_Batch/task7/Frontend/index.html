@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CRUD App</title>
+</head>
+
+<body>
+
+    <h1>User CRUD</h1>
+
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+
+    <button onclick="addUser()">
+        Add User
+    </button>
+
+    <div id="users"></div>
+
+    <script>
+        const API = "http://localhost:5000/users";
+
+        async function getUsers() {
+            const res = await fetch(API);
+            const users = await res.json();
+
+            document.getElementById("users").innerHTML =
+                users.map(user => `
+            <p>
+                ${user.name} - ${user.email}
+
+                <button onclick="deleteUser('${user._id}')">
+                    Delete
+                </button>
+            </p>
+        `).join("");
+        }
+
+        async function addUser() {
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            await fetch(API, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email
+                })
+            });
+
+            getUsers();
+        }
+
+        async function deleteUser(id) {
+
+            await fetch(`${API}/${id}`, {
+                method: "DELETE"
+            });
+
+            getUsers();
+        }
+
+        getUsers();
+    </script>
+
+</body>
+
+</html>
