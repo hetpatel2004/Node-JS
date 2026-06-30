@@ -1,0 +1,196 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CRUD</title>
+</head>
+
+<body>
+
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Name" >
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Add</button>
+    </form>
+
+    <div id="users"></div>
+
+    <script>
+      
+    </script>
+
+</body>
+
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:last-child{
+            color: aqua;
+        }
+        li:first-child{
+            color: aqua;
+        }
+        p:not(.abc){
+            color: red;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>45</li>
+        <li>45567</li>
+        <li>4545678</li>
+        <li>4545678567</li>
+        <li>454567856745678</li>
+        <li>4545678567456784567</li>
+    </ul>
+    <p>hewgfyew</p>
+    <p class="abc">hewgfyew</p>
+    <p>hewgfyew</p>
+    <p>hewgfyew</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Attachment Example</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            padding:20px;
+            height:150vh; /* Makes page scrollable */
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .container{
+            display:flex;
+            gap:20px;
+            justify-content:center;
+        }
+
+        .box{
+            width:350px;
+            height:250px;
+            border:3px solid black;
+            overflow:auto;
+            padding:10px;
+            color:white;
+            font-weight:bold;
+        }
+
+        /* SCROLL */
+        .scroll-box{
+            background-image:url("https://picsum.photos/id/1015/600/600");
+            background-size:cover;
+            background-attachment:scroll;
+        }
+
+        /* LOCAL */
+        .local-box{
+            background-image:url("https://picsum.photos/id/1015/600/600");
+            background-size:cover;
+            background-attachment:local;
+        }
+        .fixed-box{
+            background-image:url("https://picsum.photos/id/1015/600/600");
+            background-size:cover;
+            background-attachment:fixed;
+        }
+
+        p{
+            margin-bottom:15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>background-attachment: scroll vs local</h1>
+
+<div class="container">
+
+    <div class="box scroll-box">
+        <h2>SCROLL</h2>
+
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>
+        <p>Line 6</p>
+        <p>Line 7</p>
+        <p>Line 8</p>
+        <p>Line 9</p>
+        <p>Line 10</p>
+        <p>Line 11</p>
+        <p>Line 12</p>
+    </div>
+
+    <div class="box local-box">
+        <h2>LOCAL</h2>
+
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>
+        <p>Line 6</p>
+        <p>Line 7</p>
+        <p>Line 8</p>
+        <p>Line 9</p>
+        <p>Line 10</p>
+        <p>Line 11</p>
+        <p>Line 12</p>
+    </div>
+
+    <div class="box fixed-box">
+        <h2>fixed</h2>
+
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>
+        <p>Line 6</p>
+        <p>Line 7</p>
+        <p>Line 8</p>
+        <p>Line 9</p>
+        <p>Line 10</p>
+        <p>Line 11</p>
+        <p>Line 12</p>
+    </div>
+
+</div>
+
+<br><br>
+
+<h2>How to Test</h2>
+
+<ol>
+    <li>Run the code.</li>
+    <li>Scroll inside the <b>SCROLL</b> box.</li>
+    <li>Notice the content moves but the background stays attached to the element.</li>
+    <li>Now scroll inside the <b>LOCAL</b> box.</li>
+    <li>Notice both content and background move together.</li>
+</ol>
+
+</body>
+</html>
